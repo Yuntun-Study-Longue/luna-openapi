@@ -55,6 +55,9 @@ export type GenerateServiceProps = {
     /** 自定义类名 */
     customClassName?: (tagName: string) => string;
   };
+
+  genType?: string;
+
   namespace?: string;
 
   mockFolder?: string;
@@ -72,7 +75,21 @@ const converterSwaggerToOpenApi = (swagger: any) => {
     converter.convertObj(swagger, {}, (err, options) => {
       Log(['💺 将 Swagger 转化为 openAPI']);
       if (err) {
-        reject(err);
+        options.patch = true; // fix up small errors in the source definition
+        options.warnOnly = true; // Do not throw on non-patchable errors
+        options.resolveInternal = true;
+        converter.convertObj(swagger, {
+          patch: true,
+          warnOnly: true,
+          resolveInternal: true
+        }, (_err, options) => {
+          Log(['💺 tryHard 将 Swagger 转化为 openAPI']);
+          if (_err) {
+            reject(_err);
+            return;
+          }
+          resolve(options.openapi);
+        })
         return;
       }
       resolve(options.openapi);

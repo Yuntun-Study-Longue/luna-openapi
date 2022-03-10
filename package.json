@@ -1,13 +1,13 @@
 {
-  "name": "@umijs/openapi",
-  "version": "1.4.2",
+  "name": "luna-openapi",
+  "version": "0.0.1",
   "description": "",
   "repository": {
     "type": "git",
-    "url": "git+git@github.com:chenshuai2144/openapi2typescript.git"
+    "url": "git+git@github.com:Yuntun-Study-Longue/luna-openapi.git"
   },
   "license": "MIT",
-  "author": "chenshuai2144",
+  "author": "Alichs",
   "main": "dist/index.js",
   "files": [
     "dist",
