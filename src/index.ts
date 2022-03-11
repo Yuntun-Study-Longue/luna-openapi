@@ -75,12 +75,9 @@ const converterSwaggerToOpenApi = (swagger: any) => {
     converter.convertObj(swagger, {}, (err, options) => {
       Log(['💺 将 Swagger 转化为 openAPI']);
       if (err) {
-        options.patch = true; // fix up small errors in the source definition
-        options.warnOnly = true; // Do not throw on non-patchable errors
-        options.resolveInternal = true;
         converter.convertObj(swagger, {
-          patch: true,
-          warnOnly: true,
+          patch: true, // fix up small errors in the source definition
+          warnOnly: true, // Do not throw on non-patchable errors
           resolveInternal: true
         }, (_err, options) => {
           Log(['💺 tryHard 将 Swagger 转化为 openAPI']);
