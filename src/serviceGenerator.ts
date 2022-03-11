@@ -524,7 +524,7 @@ class ServiceGenerator {
           });
         }
         return {
-          genType: 'ts',
+          genType: this.config.genType,
           className,
           instanceName: `${fileName[0].toLowerCase()}${fileName.substr(1)}`,
           list: genParams,
