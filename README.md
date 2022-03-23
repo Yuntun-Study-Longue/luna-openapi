@@ -32,8 +32,9 @@ npm run openapi
 | requestLibPath  | 否 | 自定义请求方法路径 | string |
 | requestImportStatement  | 否 | 自定义请求方法表达式 | string |
 | apiPrefix  | 否 | api 的前缀 | string |
-| serversPath  | 否 | 生成的文件夹的路径 | string |
+| serversPath  | 否 | 生成的文件夹的路径(默认src/services) | string |
 | schemaPath  | 否 | openAPI 3.0 的地址 | string |
 | projectName  | 否 | 项目名称 | string |
 | namespace  | 否 | 命名空间名称 | string |
 | mockFolder  | 否 | mock目录 | string |
+| genType  | 是 | 代码类型 js or ts | string |
