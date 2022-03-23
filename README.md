@@ -22,6 +22,7 @@ generateService({
 
 ```
 在 ```package.json``` 的 ```script``` 中添加 api: ```"openapi": "ts-node openapi.config.ts",```
+如果没有安装ts-node 可以执行命令: ```npm install -g ts-node typescript '@types/node'```
 
 生成api
 ```node
