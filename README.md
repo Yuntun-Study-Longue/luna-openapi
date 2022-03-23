@@ -5,18 +5,19 @@
 
 根据 [OpenApi3](https://swagger.io/blog/news/whats-new-in-openapi-3-0/) 文档生成 request 请求代码。
 
-如果你使用 [umi](https://umijs.org) ,你可以使用[@umijs/plugin-openapi](https://www.npmjs.com/package/@umijs/plugin-openapi) 插件。
+如果你使用 [umi](https://umijs.org) ,你可以使用[plugin-openapi](https://www.npmjs.com/package/plugin-openapi) 插件。
 ## 使用
 ```node
-npm i --save-dev @umijs/openapi
+npm i --save-dev luna-openapi
 ```
 在项目根目录新建 ```openapi.config.ts```
 ```ts
-const { generateService } = require('@umijs/openapi')
+const { generateService } = require('luna-openapi')
 
 generateService({
   schemaPath: 'http://petstore.swagger.io/v2/swagger.json',
   serversPath: './servers',
+  genType: 'ts',
 })
 
 ```
